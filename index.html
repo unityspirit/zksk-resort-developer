@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ООО «Застройщик Курортов Северного Кавказа» — Элитная Недвижимость</title>
+  <meta name="description" content="ООО «Застройщик Курортов Северного Кавказа» — строительство премиальных жилых комплексов и курортной недвижимости на Северном Кавказе. Надёжность, качество, престиж.">
+  <meta name="keywords" content="застройщик Северный Кавказ, купить квартиру КМВ, новостройки Пятигорск, жилые комплексы Кавказ, курортная недвижимость">
+  <meta property="og:title" content="Застройщик Курортов Северного Кавказа">
+  <meta property="og:description" content="Элитная недвижимость и курортные комплексы на Северном Кавказе">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/logo.png?v=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════ CANVAS -->
+  <canvas id="gl-canvas"></canvas>
+
+  <!-- ═══════════════════════════════════════════════════════ LOADER -->
+  <div id="loader">
+    <div class="loader-inner">
+      <img src="assets/logo.png" alt="ЗКС" class="loader-logo">
+      <div class="loader-bar-track">
+        <div class="loader-bar" id="loader-bar"></div>
+      </div>
+      <span class="loader-pct" id="loader-pct">0%</span>
+      <p class="loader-text">Загрузка...</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" data-scroll="0">
+        <img src="assets/logo.png" alt="ЗКС Лого" class="nav-logo-img">
+        <div class="nav-logo-text">
+          <span class="nav-logo-main">ЗКС</span>
+          <span class="nav-logo-sub">Застройщик Курортов СК</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#" class="nav-link" data-scroll="1">Проекты</a></li>
+        <li><a href="#" class="nav-link" data-scroll="2">О компании</a></li>
+        <li><a href="#" class="nav-link" data-scroll="3">Преимущества</a></li>
+        <li><a href="#" class="nav-link" data-scroll="4">Контакты</a></li>
+      </ul>
+      <a href="tel:+78002010026" class="nav-cta">
+        <span class="nav-cta-icon">📞</span> Позвонить
+      </a>
+      <button class="nav-burger" id="nav-burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════ DRAWER -->
+  <div class="nav-scrim" id="nav-scrim" hidden></div>
+  <div class="nav-drawer" id="nav-drawer" hidden>
+    <button class="drawer-close" id="drawer-close" aria-label="Закрыть">✕</button>
+    <ul class="drawer-links">
+      <li><a href="#" class="drawer-link" data-scroll="1">Проекты</a></li>
+      <li><a href="#" class="drawer-link" data-scroll="2">О компании</a></li>
+      <li><a href="#" class="drawer-link" data-scroll="3">Преимущества</a></li>
+      <li><a href="#" class="drawer-link" data-scroll="4">Контакты</a></li>
+    </ul>
+    <div class="drawer-contacts">
+      <a href="tel:+78002010026" class="drawer-phone">8 800 201-00-26</a>
+      <a href="mailto:info@zksk.ru" class="drawer-email">info@zksk.ru</a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ MAIN -->
+  <div id="ui-layer">
+    <div class="stage">
+
+      <!-- ─────────────────────────── 0 · ГЕРОЙ -->
+      <section class="page" data-index="0" id="section-hero">
+        <div class="page-inner hero-inner">
+          <div class="hero-badge reveal-3d">
+            <span class="hero-badge-dot"></span>
+            Северный Кавказ · С 2012 года
+          </div>
+          <h1 class="hero-title reveal-3d">
+            <span class="gradient-text">Застройщик</span><br>
+            Курортов<br>
+            <em>Северного Кавказа</em>
+          </h1>
+          <p class="hero-subtitle reveal-3d">
+            Создаём элитное жильё и курортные комплексы<br>
+            в сердце Кавказских Минеральных Вод
+          </p>
+          <div class="hero-stats reveal-3d">
+            <div class="hero-stat">
+              <span class="stat-num">47+</span>
+              <span class="stat-label">Проектов сдано</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+              <span class="stat-num">12</span>
+              <span class="stat-label">Лет на рынке</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+              <span class="stat-num">3 200+</span>
+              <span class="stat-label">Семей переехали</span>
+            </div>
+          </div>
+          <div class="hero-cta reveal-3d">
+            <a href="#" class="btn-primary" data-scroll="4">Получить консультацию</a>
+            <a href="#" class="btn-ghost" data-scroll="1">Смотреть проекты</a>
+          </div>
+          <div class="hero-scroll-hint reveal-3d">
+            <span class="scroll-arrow">↓</span>
+            <span>Прокрутите вниз</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────── 1 · ПРОЕКТЫ -->
+      <section class="page" data-index="1" id="section-projects">
+        <div class="page-inner">
+          <div class="reveal-3d">
+            <div class="badge">Портфолио</div>
+          </div>
+          <h2 class="section-title reveal-3d">
+            Наши <span class="gradient-text">Проекты</span>
+          </h2>
+          <p class="section-desc reveal-3d">
+            От уютных резиденций до масштабных курортных комплексов — каждый объект создан с вниманием к деталям
+          </p>
+          <div class="projects-grid">
+            <div class="project-card project-card--large reveal-3d">
+              <div class="project-card-overlay">
+                <div class="project-tag">Сдан · 2024</div>
+                <h3 class="project-name">ЖК «Горный Бриз»</h3>
+                <p class="project-desc">Элитный жилой комплекс у подножия Кавказского хребта. 180 квартир, закрытая территория, панорамные виды.</p>
+                <div class="project-stats">
+                  <span>180 квартир</span>
+                  <span>Пятигорск</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card reveal-3d">
+              <div class="project-card-overlay">
+                <div class="project-tag">Строится · 2025</div>
+                <h3 class="project-name">ЖК «Курортный»</h3>
+                <p class="project-desc">Апарт-отель с бальнеологическим центром. Инвестиционная недвижимость.</p>
+                <div class="project-stats">
+                  <span>96 апартаментов</span>
+                  <span>Ессентуки</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card reveal-3d">
+              <div class="project-card-overlay">
+                <div class="project-tag">Сдан · 2023</div>
+                <h3 class="project-name">ЖК «Кавказская Ривьера»</h3>
+                <p class="project-desc">Комплекс бизнес-класса с инфраструктурой курортного отеля.</p>
+                <div class="project-stats">
+                  <span>240 квартир</span>
+                  <span>Кисловодск</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card project-card--cta reveal-3d">
+              <div class="project-cta-inner">
+                <span class="project-cta-icon">🏔️</span>
+                <h3>Хотите узнать о новых объектах?</h3>
+                <a href="#" class="btn-primary" data-scroll="4">Записаться на показ</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────── 2 · О КОМПАНИИ -->
+      <section class="page" data-index="2" id="section-about">
+        <div class="page-inner">
+          <div class="reveal-3d">
+            <div class="badge">О нас</div>
+          </div>
+          <h2 class="section-title reveal-3d">
+            <span class="gradient-text">12 лет</span> создаём<br>
+            лучшее жильё Кавказа
+          </h2>
+          <div class="about-grid">
+            <div class="about-text reveal-3d">
+              <p class="about-p">
+                ООО «Застройщик Курортов Северного Кавказа» основано в 2012 году с единственной целью — строить недвижимость, которой жители будут гордиться спустя десятилетия.
+              </p>
+              <p class="about-p">
+                Мы работаем в регионе Кавказских Минеральных Вод: Пятигорск, Кисловодск, Ессентуки, Железноводск. Наши объекты соответствуют международным стандартам качества при сохранении доступной цены.
+              </p>
+              <div class="about-licenses">
+                <div class="license-item">
+                  <span class="license-icon">✅</span>
+                  <span>Проектная декларация</span>
+                </div>
+                <div class="license-item">
+                  <span class="license-icon">✅</span>
+                  <span>Эскроу-счета (214-ФЗ)</span>
+                </div>
+                <div class="license-item">
+                  <span class="license-icon">✅</span>
+                  <span>Страхование ответственности</span>
+                </div>
+                <div class="license-item">
+                  <span class="license-icon">✅</span>
+                  <span>Аккредитация банков ТОП-10</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-metrics reveal-3d">
+              <div class="metric-card">
+                <span class="metric-num">47+</span>
+                <span class="metric-label">Сданных объектов</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-num">3 200+</span>
+                <span class="metric-label">Счастливых семей</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-num">4</span>
+                <span class="metric-label">Города присутствия</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-num">0</span>
+                <span class="metric-label">Просроченных сдач</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────── 3 · ПРЕИМУЩЕСТВА -->
+      <section class="page" data-index="3" id="section-advantages">
+        <div class="page-inner">
+          <div class="reveal-3d">
+            <div class="badge">Почему мы</div>
+          </div>
+          <h2 class="section-title reveal-3d">
+            Ваш выбор — это <span class="gradient-text">надёжность</span>
+          </h2>
+          <p class="section-desc reveal-3d">
+            Каждый аспект нашей работы направлен на то, чтобы вы получили больше, чем ожидали
+          </p>
+          <div class="features-grid">
+            <div class="feature-card reveal-3d">
+              <div class="feature-icon">🏔️</div>
+              <h3 class="feature-title">Лучшие локации</h3>
+              <p class="feature-desc">Строим там, где чистый горный воздух, термальные воды и развитая инфраструктура курорта прямо у порога.</p>
+            </div>
+            <div class="feature-card reveal-3d">
+              <div class="feature-icon">🏗️</div>
+              <h3 class="feature-title">Гарантия качества</h3>
+              <p class="feature-desc">Используем монолитно-кирпичную технологию с улучшенной теплоизоляцией. Гарантия на конструктив — 5 лет.</p>
+            </div>
+            <div class="feature-card reveal-3d">
+              <div class="feature-icon">💼</div>
+              <h3 class="feature-title">214-ФЗ · Эскроу</h3>
+              <p class="feature-desc">Ваши деньги защищены на эскроу-счёте в банке до момента сдачи дома. Никакого риска — только уверенность.</p>
+            </div>
+            <div class="feature-card reveal-3d">
+              <div class="feature-icon">🏦</div>
+              <h3 class="feature-title">Ипотека от 0,1%</h3>
+              <p class="feature-desc">Аккредитованы в 8 банках. Семейная ипотека, IT-ипотека, субсидированные программы — подберём лучшие условия.</p>
+            </div>
+            <div class="feature-card reveal-3d">
+              <div class="feature-icon">🎨</div>
+              <h3 class="feature-title">Дизайн-проект в подарок</h3>
+              <p class="feature-desc">При покупке квартиры от 60 м² — бесплатный дизайн-проект от нашего архитектурного бюро.</p>
+            </div>
+            <div class="feature-card reveal-3d">
+              <div class="feature-icon">📋</div>
+              <h3 class="feature-title">Сдаём в срок</h3>
+              <p class="feature-desc">За 12 лет ни один объект не был сдан с опозданием. Наша репутация — лучший показатель надёжности.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────── 4 · КОНТАКТЫ -->
+      <section class="page" data-index="4" id="section-contacts">
+        <div class="page-inner">
+          <div class="reveal-3d">
+            <div class="badge">Связаться с нами</div>
+          </div>
+          <h2 class="section-title reveal-3d">
+            Начните свой путь к <span class="gradient-text">идеальному дому</span>
+          </h2>
+          <p class="section-desc reveal-3d">
+            Оставьте заявку — менеджер перезвонит в течение 15 минут и ответит на все вопросы
+          </p>
+          <div class="contact-grid">
+            <div class="contact-form-wrap reveal-3d">
+              <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                  <label class="form-label">Ваше имя</label>
+                  <input type="text" class="form-input" placeholder="Иван Петров" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Телефон</label>
+                  <input type="tel" class="form-input" placeholder="+7 (900) 000-00-00" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Интересует</label>
+                  <select class="form-input form-select">
+                    <option>Покупка квартиры</option>
+                    <option>Апартаменты для инвестиций</option>
+                    <option>Коммерческая недвижимость</option>
+                    <option>Подбор ипотеки</option>
+                    <option>Другое</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn-primary btn-full" id="form-submit">
+                  Получить консультацию бесплатно
+                </button>
+                <p class="form-note">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
+              </form>
+              <div class="form-success" id="form-success" hidden>
+                <span class="success-icon">✅</span>
+                <h3>Заявка принята!</h3>
+                <p>Менеджер перезвонит вам в течение 15 минут.</p>
+              </div>
+            </div>
+            <div class="contact-info reveal-3d">
+              <div class="contact-info-card">
+                <h3 class="contact-info-title">Наши офисы</h3>
+                <div class="office-item">
+                  <span class="office-icon">📍</span>
+                  <div>
+                    <strong>Пятигорск</strong>
+                    <p>пр. Кирова, 30, офис 412</p>
+                    <p>Пн–Пт: 9:00–19:00, Сб: 10:00–16:00</p>
+                  </div>
+                </div>
+                <div class="office-item">
+                  <span class="office-icon">📍</span>
+                  <div>
+                    <strong>Кисловодск</strong>
+                    <p>ул. Куйбышева, 15</p>
+                    <p>Пн–Пт: 9:00–18:00</p>
+                  </div>
+                </div>
+                <div class="contact-phones">
+                  <a href="tel:+78002010026" class="contact-phone">
+                    <span>📞</span> 8 800 201-00-26
+                    <small>Бесплатно по России</small>
+                  </a>
+                  <a href="tel:+78793001234" class="contact-phone">
+                    <span>📱</span> +7 (879) 300-12-34
+                    <small>Отдел продаж</small>
+                  </a>
+                </div>
+                <div class="contact-social">
+                  <a href="#" class="social-btn">ВКонтакте</a>
+                  <a href="#" class="social-btn">Telegram</a>
+                  <a href="#" class="social-btn">WhatsApp</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+          <div class="footer-inner">
+            <div class="footer-logo">
+              <img src="assets/logo.png" alt="ЗКС" class="footer-logo-img">
+              <span>ООО «Застройщик Курортов Северного Кавказа»</span>
+            </div>
+            <div class="footer-links">
+              <a href="#">Политика конфиденциальности</a>
+              <a href="#">Проектные декларации</a>
+              <a href="#">Раскрытие информации</a>
+            </div>
+            <p class="footer-copy">© 2012–2025 ООО «ЗКС». ИНН: 2632100000. Не является публичной офертой.</p>
+          </div>
+        </footer>
+      </section>
+
+    </div><!-- /stage -->
+  </div><!-- /ui-layer -->
+
+  <script src="app.js"></script>
+</body>
+</html>
